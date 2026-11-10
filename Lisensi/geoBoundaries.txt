@@ -1,0 +1,34 @@
+DATA BATAS WILAYAH DI slak-peta.js DAN slak-peta-kab.js
+=======================================================
+
+Batas kabupaten/kota berasal dari:
+  Badan Pusat Statistik (BPS - Statistics Indonesia), World Food Programme,
+  dan OCHA ROAP, "Indonesia - Subnational Administrative Boundaries"
+  (https://data.humdata.org/dataset/cod-ab-idn), lisensi
+  Creative Commons Attribution 3.0 IGO (CC BY 3.0 IGO).
+
+Data tersebut diambil lewat geoBoundaries (gbOpen IDN ADM2):
+  Runfola D, Anderson A, Baier H, et al. (2020) geoBoundaries: A global
+  database of political administrative boundaries. PLoS ONE 15(4): e0231866.
+  https://doi.org/10.1371/journal.pone.0231866  ·  https://www.geoboundaries.org
+  Kode dan karya turunan geoBoundaries berlisensi CC BY 4.0.
+
+Perubahan oleh Slak:
+  - Kab/kota digabung menjadi 38 provinsi, termasuk Papua Selatan, Papua Tengah,
+    Papua Pegunungan (UU 14-16/2022) dan Papua Barat Daya (UU 29/2022).
+  - Beberapa nama disesuaikan dengan nama resmi terbaru (mis. Toba,
+    Kepulauan Tanimbar, Mahakam Ulu, Karangasem).
+  - Geometri disederhanakan dan dikuantisasi agar ringan; batas tidak cocok
+    untuk keperluan hukum atau pengukuran resmi.
+  - Titik tengah kab/kota dan daftar alias nama (mis. Timika -> Kab. Mimika)
+    disusun oleh Slak.
+
+Saat memakai peta Slak di karya publik, cantumkan atribusi, misalnya:
+  "Batas wilayah © BPS/OCHA via geoBoundaries (CC BY 3.0 IGO)".
+Peta Slak menuliskan atribusi ini otomatis di pojok peta.
+
+Ubin peta daring (opsi tiles) bukan bagian dari Slak:
+  - "osm": © OpenStreetMap contributors (ODbL), ikuti kebijakan penggunaan
+    ubin OpenStreetMap: https://operations.osmfoundation.org/policies/tiles/
+  - "carto"/"carto-dark": © OpenStreetMap contributors © CARTO
+  - "topo": © OpenStreetMap contributors, SRTM | © OpenTopoMap (CC-BY-SA)

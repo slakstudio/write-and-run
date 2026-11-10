@@ -1,0 +1,17 @@
+Natural Earth — Free vector and raster map data @ naturalearthdata.com
+
+slak-peta-dunia.js memuat data turunan (disederhanakan) dari:
+  ne_50m_admin_0_countries        (batas negara, skala 1:50 juta)
+  ne_50m_admin_1_states_provinces (provinsi/negara bagian, skala 1:50 juta)
+Sumber: https://github.com/nvkelso/natural-earth-vector (commit ca96624a, 2 Juni 2022)
+
+Ketentuan penggunaan (LICENSE.md di repositori di atas; lihat juga naturalearthdata.com/about/terms-of-use):
+"All versions of Natural Earth raster + vector map data found on this website are in the public domain.
+You may use the maps in any manner, including modifying the content and design, electronic dissemination,
+and offset printing. The primary authors, Tom Patterson and Nathaniel Vaughn Kelso, and all other
+contributors renounce all financial claim to the maps and invites you to use them for personal,
+educational, and commercial purposes. No permission is needed to use Natural Earth. Crediting the
+authors is unnecessary."
+
+Catatan: batas negara dalam data ini mengikuti pilihan pembuat Natural Earth dan tidak mencerminkan
+sikap Slak terhadap sengketa wilayah mana pun.

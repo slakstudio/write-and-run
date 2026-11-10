@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 slakstudio
+Copyright (c) 2026 Para pengembang Slak (the Slak authors)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,34 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+-------------------------------------------------------------------------------
+Terjemahan bebas (yang berlaku secara hukum adalah teks bahasa Inggris di atas)
+-------------------------------------------------------------------------------
+
+Lisensi MIT
+
+Hak cipta (c) 2026 Para pengembang Slak
+
+Siapa pun yang memperoleh salinan perangkat lunak ini beserta dokumentasinya
+("Perangkat Lunak") diberi izin secara gratis untuk memperlakukan Perangkat
+Lunak tanpa batasan, termasuk tanpa batasan hak untuk memakai, menyalin,
+mengubah, menggabungkan, menerbitkan, menyebarkan, memberi sublisensi, dan/atau
+menjual salinan Perangkat Lunak, serta mengizinkan orang yang menerima
+Perangkat Lunak untuk melakukan hal yang sama, dengan syarat berikut:
+
+Pemberitahuan hak cipta di atas dan pemberitahuan izin ini harus disertakan
+dalam semua salinan atau bagian penting dari Perangkat Lunak.
+
+PERANGKAT LUNAK INI DISEDIAKAN "SEBAGAIMANA ADANYA", TANPA JAMINAN APA PUN,
+TERSURAT MAUPUN TERSIRAT, TERMASUK NAMUN TIDAK TERBATAS PADA JAMINAN DAPAT
+DIPERDAGANGKAN, KESESUAIAN UNTUK TUJUAN TERTENTU, DAN TIDAK MELANGGAR HAK PIHAK
+LAIN. DALAM KEADAAN APA PUN PENULIS ATAU PEMEGANG HAK CIPTA TIDAK BERTANGGUNG
+JAWAB ATAS KLAIM, KERUGIAN, ATAU KEWAJIBAN LAIN, BAIK DALAM GUGATAN KONTRAK,
+PERBUATAN MELAWAN HUKUM, ATAU LAINNYA, YANG TIMBUL DARI, ATAU BERKAITAN DENGAN
+PERANGKAT LUNAK ATAU PEMAKAIAN ATAU URUSAN LAIN DENGAN PERANGKAT LUNAK.
+
+-------------------------------------------------------------------------------
+Komponen pihak ketiga yang ikut di dalam Slak tetap memakai lisensinya
+masing-masing (semuanya terbuka dan boleh dipakai komersial tanpa membayar).
+Lihat folder Lisensi/ dan DAFTAR-LISENSI.md.

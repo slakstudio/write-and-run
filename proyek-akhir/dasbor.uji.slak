@@ -1,0 +1,14 @@
+const { test, expect } = sl.testing
+for (const hal of ["Ringkasan", "Penjualan", "Produk", "Wilayah", "Prakiraan", "Target", "Tentang Saya"]) {
+  await test(`halaman ${hal} tanpa galat`, async () => {
+    const at = await sl.testing.run("dasbor.slak", { timeout: 20000 })
+    if (hal !== "Ringkasan") { at.switch_page(hal); await at.run({ timeout: 20000 }) }
+    expect(at.exception).toHaveLength(0)
+  })
+}
+await test("filter 2023 Online tanpa galat", async () => {
+  const at = await sl.testing.run("dasbor.slak", { timeout: 20000 })
+  await at.selectbox("Tahun").set_value("2023").run()
+  await at.radio("Kanal").set_value("Online").run()
+  expect(at.exception).toHaveLength(0)
+})
