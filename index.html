@@ -10,7 +10,13 @@
 <link rel="icon" href="ikon.svg" type="image/svg+xml">
 <link rel="icon" href="ikon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<!-- Edisi web buku Write and Run, dirakit dari folder naskah/ untuk Slak 1.9.1 dan slak-docs.js 0.1.
+<meta name="theme-color" content="#0f7a70">
+<!-- Huruf Inter dan JetBrains Mono (SIL Open Font License), sama dengan slak.studio. Tanpa internet, halaman memakai huruf bawaan sistem. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>html,body{margin:0;background:#fff}@media (prefers-color-scheme:dark){html,body{background:#0f1115}}</style>
+<!-- Edisi web buku Write and Run, dibuat dengan Slak 1.9.1 dan slak-docs.js 0.2.0 (sama dengan slak.studio).
      Halaman ini jalan saat dibuka dengan klik dua kali, di Slak Studio, dan di hosting biasa. -->
 <style>
 /* Tata letak cetak buku (PDF). Slak sendiri tidak diubah; gaya ini hanya menimpa aturan cetaknya. */
@@ -32,6 +38,7 @@
   .slak-plot { height: auto !important }
   .slak-plot > svg { display: block; width: 80% !important; height: auto !important; margin: 0 auto }
   .slak-chart, .slak-df, .slak-metric { break-inside: avoid !important }
+  #sd-head, .sd-bar, .sd-tocin, .sd-crumb, .sd-pn, .sd-src { display: none !important }
   .cetak-utuh { break-inside: avoid !important }
   .cetak-lekat { break-after: avoid !important }
 }
@@ -64,6 +71,7 @@ addEventListener("beforeprint", () => {
 <script src="cabang.csv.js"></script>
 <script src="target.csv.js"></script>
 <script src="toko-analisis.js"></script>
+<script src="beranda.js"></script>
 </head>
 <body>
 <script type="text/markdown" id="bab-00">
@@ -8911,12 +8919,10 @@ Istilah pemrograman dan analisis data yang dipakai di buku ini, beserta padanan 
 </script>
 
 <script type="text/slak">
-await Slak.docs.site(sl, {
-  judul: "Write and Run",
-  ikon: "ikon.svg",
-  deskripsi: "Belajar JavaScript untuk Analisis Data dengan Slak",
-  playground: "https://slak.studio/playground/",
-  bab: {
+window.BUKU = { playground: "https://slak.studio/playground/", blok: "300" }
+sl.set_page_config({ page_title: "Write and Run", page_icon: "./ikon.svg", layout: "centered" })
+const H = window.BUKU_HALAMAN || {}
+const daftar = {
   "Mulai": [
     {
       "judul": "Sebelum Mulai",
@@ -9137,8 +9143,27 @@ await Slak.docs.site(sl, {
       "deskripsi": "Istilah pemrograman dan analisis data yang dipakai di buku ini, beserta padanan bahasa Inggrisnya. Angka di akhir menunjuk bab tempat istilah itu dijelaskan."
     }
   ]
-},
-  kaki: "Write and Run · Belajar JavaScript untuk Analisis Data dengan Slak · Sesuai Slak 1.9.1 · Data Toko Nusantara adalah data fiktif"
+}
+await Slak.docs.site(sl, {
+  tampilan: "jernih",
+  judul: "Write and Run",
+  judul_beranda: "Write and Run · Belajar JavaScript untuk Analisis Data dengan Slak",
+  logo: { teks: "Write and Run" },
+  versi: "Slak 1.9.1",
+  deskripsi: "Buku belajar JavaScript dari nol hingga analis data tingkat menengah, dengan Slak 1.9.1, langsung di browser tanpa build.",
+  gambar: "sampul/sampul-web.png",
+  playground: window.BUKU.playground,
+  cari_label: "Cari di buku",
+  menu: [
+    { label: "Mulai", href: "#/sebelum-mulai" },
+    { label: "Proyek", href: "proyek-akhir/index.html" },
+    { label: "PDF", href: "Write-and-Run.pdf" },
+    { label: "Playground", href: window.BUKU.playground },
+    { label: "Slak", href: "https://slak.studio/" },
+    { label: "GitHub", href: "https://github.com/slakstudio/write-and-run" }
+  ],
+  bab: Object.assign({ "": [{ judul: "Beranda", url: "beranda", polos: true, fungsi: (s) => H.beranda(s), teks_cari: (H.cari || {}).beranda || "" }] }, daftar),
+  kaki: 'Write and Run · Belajar JavaScript untuk Analisis Data dengan Slak · Sesuai Slak 1.9.1 · Situs ini dibuat dengan Slak · Data Toko Nusantara adalah data fiktif · <a href="https://slak.studio">slak.studio</a>'
 })
 </script>
 </body>

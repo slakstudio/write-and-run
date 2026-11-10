@@ -72,10 +72,11 @@ Buku terdiri dari 26 bab dalam tiga tahap, ditambah tujuh lampiran dan glosarium
 | Berkas / folder | Isi |
 |---|---|
 | `index.html` | Edisi web buku |
+| `beranda.js` | Halaman beranda edisi web (sampul, contoh yang berjalan, tahap belajar) |
 | `Write-and-Run.pdf` | Edisi PDF |
 | `naskah/` | Sumber Markdown setiap bab dan lampiran |
 | `proyek-akhir/` | Dasbor Toko Nusantara dari Bab 25, siap dibuka, beserta berkas ujinya |
-| `slak*.js` | Slak 1.9.1, tidak diubah |
+| `slak*.js` | Slak 1.9.1, tidak diubah; `slak-docs.js` versi 0.2.0, sama dengan yang dipakai slak.studio |
 | `*.csv` dan `*.csv.js` | Dataset Toko Nusantara; versi `.csv.js` membuat data terbaca saat halaman dibuka dengan klik dua kali |
 | `toko-nusantara-besar.csv` | 250 ribu transaksi untuk latihan data besar (Bab 12 dan 21) |
 | `toko-analisis.js`, `toko-analisis.mjs` | Contoh berkas JavaScript terpisah dan ES Module (Bab 24) |
