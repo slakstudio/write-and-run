@@ -65,6 +65,29 @@ addEventListener("beforeprint", () => {
 <script src="slak-komponen.js"></script>
 <script src="slak-duckdb.js"></script>
 <script src="slak-docs.js"></script>
+<script>
+/* Tautan "Buka di Playground": playground ada di slak.studio/playground/, sedangkan data buku ada di
+   slak.studio/write-and-run/. Nama data pendek di kode tautan diganti alamat lengkapnya supaya contoh
+   langsung jalan di playground. Kode di halaman buku tidak berubah. Hanya memakai Slak.share (API Slak 1.9.1). */
+(function () {
+  const DATA = "https://slak.studio/write-and-run/"
+  const NAMA = ["toko-nusantara-besar.csv", "toko-nusantara-kotor.csv", "toko-nusantara.csv", "produk.csv", "cabang.csv", "target.csv"]
+  const ubah = kode => {
+    for (const n of NAMA) for (const q of ['"', "'", "`"]) kode = kode.split(q + n + q).join(q + DATA + n + q)
+    return kode
+  }
+  async function perbaiki(a) {
+    if (a.dataset.dataBuku) return
+    a.dataset.dataBuku = "1"
+    const [dasar, hash] = a.href.split("#")
+    const kode = await Slak.share.read("#" + hash)
+    const baru = kode ? ubah(kode) : kode
+    if (baru && baru !== kode) a.href = await Slak.share.link(baru, dasar)
+  }
+  new MutationObserver(() => document.querySelectorAll('.sd-bar a[href*="#kode="]:not([data-data-buku])').forEach(a => perbaiki(a).catch(() => {})))
+    .observe(document.documentElement, { childList: true, subtree: true })
+})()
+</script>
 <script src="toko-nusantara.csv.js"></script>
 <script src="toko-nusantara-kotor.csv.js"></script>
 <script src="produk.csv.js"></script>
@@ -2764,7 +2787,11 @@ Browser melarang halaman yang dibuka dengan klik dua kali membaca berkas lain di
 Folder bahan buku sudah berisi berkas `.csv.js` yang dibungkus, jadi semua contoh buku tetap jalan saat halaman buku dibuka dengan klik dua kali.
 
 > **Catatan untuk pengguna playground**
-> Playground tidak punya folder proyek. Saat contoh yang membaca `toko-nusantara.csv` dibuka di playground, Slak akan memintamu memilih berkasnya (bila playground dibuka dari komputer), atau kamu bisa mengunggahnya dengan `sl.file_uploader` seperti di 11.6. Cara paling nyaman untuk Tahap 2 dan 3 adalah halaman buku ini sendiri atau Slak Studio dengan folder bahan buku.
+> Playground tidak punya folder proyek, jadi nama pendek seperti `"toko-nusantara.csv"` tidak ditemukan di sana. Data buku ini tersedia di internet, dan `read_csv` bisa membacanya dari alamat lengkap:
+>
+> `const df = await sl.read_csv("https://slak.studio/write-and-run/toko-nusantara.csv")`
+>
+> Tautan **Buka di Playground** di edisi web buku ini sudah memakai alamat lengkap itu, jadi contohnya langsung jalan. Kalau kamu mengetik sendiri di playground, tulis alamat lengkapnya. Berkas lain (`toko-nusantara-kotor.csv`, `produk.csv`, `cabang.csv`, `target.csv`) ada di alamat yang sama. Membaca dari alamat lengkap butuh internet; di halaman buku dan di Slak Studio dengan folder bahan buku, nama pendek sudah cukup.
 
 ## 11.5 JSON
 
@@ -4559,7 +4586,7 @@ Token dan password disimpan terenkripsi oleh sistem operasi di komputermu dan **
 - Data yang disematkan bisa dilihat siapa saja lewat "View source". **Jangan menerbitkan data pribadi atau rahasia**; pakai data fiktif seperti Toko Nusantara, atau data yang sudah dianonimkan.
 
 > **Coba di playground**
-> Salin laporan lengkap 17.5 ke playground, lalu tekan **Bagikan**. Kirim tautannya ke temanmu. Ingat, data CSV tidak ikut di tautan; temanmu perlu memilih berkasnya, atau terbitkan lewat Slak Studio supaya datanya ikut.
+> Salin laporan lengkap 17.5 ke playground, lalu tekan **Bagikan**. Kirim tautannya ke temanmu. Ingat, data CSV tidak ikut di tautan. Supaya laporan langsung jalan di komputer temanmu, baca datanya dari alamat lengkap `https://slak.studio/write-and-run/toko-nusantara.csv` (lihat catatan di Bab 11), atau terbitkan lewat Slak Studio supaya datanya ikut.
 
 ## Kesalahan umum
 

@@ -225,7 +225,7 @@ Token dan password disimpan terenkripsi oleh sistem operasi di komputermu dan **
 - Data yang disematkan bisa dilihat siapa saja lewat "View source". **Jangan menerbitkan data pribadi atau rahasia**; pakai data fiktif seperti Toko Nusantara, atau data yang sudah dianonimkan.
 
 > **Coba di playground**
-> Salin laporan lengkap 17.5 ke playground, lalu tekan **Bagikan**. Kirim tautannya ke temanmu. Ingat, data CSV tidak ikut di tautan; temanmu perlu memilih berkasnya, atau terbitkan lewat Slak Studio supaya datanya ikut.
+> Salin laporan lengkap 17.5 ke playground, lalu tekan **Bagikan**. Kirim tautannya ke temanmu. Ingat, data CSV tidak ikut di tautan. Supaya laporan langsung jalan di komputer temanmu, baca datanya dari alamat lengkap `https://slak.studio/write-and-run/toko-nusantara.csv` (lihat catatan di Bab 11), atau terbitkan lewat Slak Studio supaya datanya ikut.
 
 ## Kesalahan umum
 

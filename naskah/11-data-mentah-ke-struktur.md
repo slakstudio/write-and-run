@@ -144,7 +144,11 @@ Browser melarang halaman yang dibuka dengan klik dua kali membaca berkas lain di
 Folder bahan buku sudah berisi berkas `.csv.js` yang dibungkus, jadi semua contoh buku tetap jalan saat halaman buku dibuka dengan klik dua kali.
 
 > **Catatan untuk pengguna playground**
-> Playground tidak punya folder proyek. Saat contoh yang membaca `toko-nusantara.csv` dibuka di playground, Slak akan memintamu memilih berkasnya (bila playground dibuka dari komputer), atau kamu bisa mengunggahnya dengan `sl.file_uploader` seperti di 11.6. Cara paling nyaman untuk Tahap 2 dan 3 adalah halaman buku ini sendiri atau Slak Studio dengan folder bahan buku.
+> Playground tidak punya folder proyek, jadi nama pendek seperti `"toko-nusantara.csv"` tidak ditemukan di sana. Data buku ini tersedia di internet, dan `read_csv` bisa membacanya dari alamat lengkap:
+>
+> `const df = await sl.read_csv("https://slak.studio/write-and-run/toko-nusantara.csv")`
+>
+> Tautan **Buka di Playground** di edisi web buku ini sudah memakai alamat lengkap itu, jadi contohnya langsung jalan. Kalau kamu mengetik sendiri di playground, tulis alamat lengkapnya. Berkas lain (`toko-nusantara-kotor.csv`, `produk.csv`, `cabang.csv`, `target.csv`) ada di alamat yang sama. Membaca dari alamat lengkap butuh internet; di halaman buku dan di Slak Studio dengan folder bahan buku, nama pendek sudah cukup.
 
 ## 11.5 JSON
 
